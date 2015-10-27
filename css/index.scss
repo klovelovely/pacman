@@ -1,69 +1,72 @@
 * {
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
-html{
-    font-size:100px;
+
+html {
+    font-size: 100px;
 }
-body{
-    font-size:16px;
-    background:#2c3242;
+
+body {
+    font-size: 16px;
+    background: #2c3242;
 }
+
 .gameContainer {
     padding: 6.6667%;
 }
 
 .map {
-    position:relative;
-    width:100%;
+    position: relative;
+    width: 100%;
     .gift {
-        position:absolute;
-        top:0;
-        width:20%;
-        border:.04rem solid #fff;
-        border-radius:.05rem;
-        min-height:.1rem;
+        position: absolute;
+        top: 0;
+        width: 20%;
+        border: .04rem solid #fff;
+        border-radius: .05rem;
+        min-height: .1rem;
         background: rgba(255, 255, 255, 1) url(https://cdn2.iconfinder.com/data/icons/flat-ui-free/200/gift.png) no-repeat center;
         background-size: cover;
-        box-shadow:0 0 .2rem rgba(0,0,0,.6);
-        &:after{
-            content:'';
-            display:block;
-            clear:both;
-            padding-top:100%;
+        box-shadow: 0 0 .2rem rgba(0, 0, 0, .6);
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+            padding-top: 100%;
         }
-        .triangle{
-            position:absolute;
-            bottom:-.16rem;
-            left:50%;
-            width:0;
-            height:0;
-            margin-left:-.08rem;
-            border:.08rem solid transparent;
-            border-top-color:rgba(255,255,255,1);
+        .triangle {
+            position: absolute;
+            bottom: -.16rem;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -.08rem;
+            border: .08rem solid transparent;
+            border-top-color: rgba(255, 255, 255, 1);
         }
     }
-    .gift1{
-        left:0;
+    .gift1 {
+        left: 0;
         background-image: url(http://p0.55tuanimg.com/static/goods/ckeditor/2013/02/04/17/ckeditor_1359971186_8668_wm.jpg);
     }
-    .gift2{
-        left:20%;
+    .gift2 {
+        left: 20%;
         display: none;
     }
-    .gift3{
-        left:40%;
+    .gift3 {
+        left: 40%;
         background-image: url(http://img5q.duitang.com/uploads/item/201403/07/20140307192153_SAzAc.jpeg);
     }
-    .gift4{
-        left:60%;
+    .gift4 {
+        left: 60%;
         display: none;
     }
-    .gift5{
-        left:80%;
+    .gift5 {
+        left: 80%;
         background-image: url(http://tfood-image.stor.appsina.com/606/1/0/13077f53441dd44a2184eb7637c38ed1.jpg);
     }
-    .pathContainer{
-        padding-top:20%;
+    .pathContainer {
+        padding-top: 20%;
         .path {
             width: 100%;
             height: 2px;
@@ -95,20 +98,20 @@ body{
             border-radius: 50%;
             background: #40d4cd;
         }
-        .node1{
-            left:10%;
+        .node1 {
+            left: 10%;
         }
-        .node2{
-            left:30%;
+        .node2 {
+            left: 30%;
         }
-        .node3{
-            left:50%;
+        .node3 {
+            left: 50%;
         }
-        .node4{
-            left:70%;
+        .node4 {
+            left: 70%;
         }
-        .node5{
-            left:90%;
+        .node5 {
+            left: 90%;
         }
     }
 
@@ -116,21 +119,21 @@ body{
         position: absolute;
         bottom: -0.15rem;
         left: 0;
-        transition:1s all ease-out;
-        .pacman{
-            position:relative;
-            width:30px;
-            height:30px;
+        transition: 1s all ease-out;
+        .pacman {
+            position: relative;
+            width: 30px;
+            height: 30px;
             .forehead,
             .head,
             .jaw {
-                position:absolute;
-                top:0;
-                left:0;
-                width:100%;
-                height:50%;
-                overflow:hidden;
-                transform-origin:center bottom;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                overflow: hidden;
+                transform-origin: center bottom;
             }
             .forehead:before {
                 content: '';
@@ -139,103 +142,103 @@ body{
                 left: 60%;
                 width: 2px;
                 height: 4px;
-                background-color: rgba(0,0,0,.8);
+                background-color: rgba(0, 0, 0, .8);
                 z-index: 1;
             }
             .forehead:after,
             .head:after,
-            .jaw:after{
-                content:'';
-                position:absolute;
-                top:0;
-                left:0;
-                width:100%;
-                height:200%;
-                border-radius:50%;
-                background:rgba(247,197,40,1);
+            .jaw:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 200%;
+                border-radius: 50%;
+                background: rgba(247, 197, 40, 1);
             }
-            .forehead{
-                transform:rotate(-30deg);
+            .forehead {
+                transform: rotate(-30deg);
                 /*background:rgba(255,0,0,.2);*/
             }
-            .head{
-                transform:rotate(-90deg);
+            .head {
+                transform: rotate(-90deg);
                 /*background:rgba(0,255,0,.2);*/
             }
-            .jaw{
-                transform:rotate(-160deg);
+            .jaw {
+                transform: rotate(-160deg);
                 /*background:rgba(0,0,255,.2);*/
             }
             .forehead-animation {
-                animation:forehead-animation .6s infinite linear;
+                animation: forehead-animation .6s infinite linear;
             }
             .jaw-animation {
-                animation:jaw-animation .6s infinite linear;
+                animation: jaw-animation .6s infinite linear;
             }
         }
 
-        @keyframes forehead-animation{
+        @keyframes forehead-animation {
             /* half open */
             0% {
-                transform:rotate(-30deg);
+                transform: rotate(-30deg);
             }
             /* full open */
             25% {
-                transform:rotate(-60deg);
+                transform: rotate(-60deg);
             }
             /* half open */
             50% {
-                transform:rotate(-30deg);
+                transform: rotate(-30deg);
             }
             /* closed */
             75% {
-                transform:rotate(0deg);
+                transform: rotate(0deg);
             }
             /* half open */
             100% {
-                transform:rotate(-30deg);
+                transform: rotate(-30deg);
             }
         }
 
-        @keyframes jaw-animation{
+        @keyframes jaw-animation {
             /* half open */
             0% {
-                transform:rotate(-150deg);
+                transform: rotate(-150deg);
             }
             /* full open */
             25% {
-                transform:rotate(-120deg);
+                transform: rotate(-120deg);
             }
             /* half open */
             50% {
-                transform:rotate(-150deg);
+                transform: rotate(-150deg);
             }
             /* closed */
             75% {
-                transform:rotate(-180deg);
+                transform: rotate(-180deg);
             }
             /* half open */
             100% {
-                transform:rotate(-150deg);
+                transform: rotate(-150deg);
             }
         }
     }
-    .step0{
-        left:-32%;
+    .step0 {
+        left: -32%;
     }
-    .step1{
-        left:8%;
+    .step1 {
+        left: 8%;
     }
-    .step2{
-        left:28%;
+    .step2 {
+        left: 28%;
     }
-    .step3{
-        left:48%;
+    .step3 {
+        left: 48%;
     }
-    .step4{
-        left:68%;
+    .step4 {
+        left: 68%;
     }
-    .step5{
-        left:88%;
+    .step5 {
+        left: 88%;
     }
 }
