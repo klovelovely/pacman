@@ -1,2 +1,2 @@
 # pacman
-pacman game
+pacman animatin demo
