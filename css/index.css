@@ -26,8 +26,12 @@ a {
 
 /* 通用类 */
 .anim {
-  -webkit-transition: 1s all ease-out;
-  transition: 1s all ease-out; }
+  -webkit-transition: .8s all ease-out;
+  transition: .8s all ease-out; }
+
+.animated {
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s; }
 
 /*! @license
 *
@@ -1065,7 +1069,7 @@ button {
 .formContainer {
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  z-index: 200;
   width: 100%;
   height: 2.1rem;
   padding: 0 4%;
@@ -1075,8 +1079,7 @@ button {
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);*/
   opacity: 0;
   -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-  z-index: 200; }
+  transform: translate3d(0, 100%, 0); }
   .formContainer p {
     font-size: .18rem;
     font-weight: bold; }
@@ -1104,6 +1107,8 @@ button {
       margin-right: 2%; }
     .formContainer .userInput .userMobile {
       margin-left: 2%; }
+  .formContainer .formGetGift {
+    display: none; }
   .formContainer .formRate {
     display: none; }
     .formContainer .formRate .button {

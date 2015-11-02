@@ -30,8 +30,12 @@ a {
 
 /* 通用类 */
 .anim {
-    -webkit-transition: 1s all ease-out;
-    transition: 1s all ease-out;
+    -webkit-transition: .8s all ease-out;
+    transition: .8s all ease-out;
+}
+.animated {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
 }
 
 @import "button.scss";
@@ -520,7 +524,7 @@ button {
 .formContainer {
     position: fixed;
     bottom: 0;
-    z-index: 100;
+    z-index: 200;
     width: 100%;
     height: 2.1rem;
     padding: 0 4%;
@@ -531,7 +535,6 @@ button {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
-    z-index: 200;
     p {
         font-size: .18rem;
         font-weight: bold;
@@ -569,7 +572,7 @@ button {
 
     }
     .formGetGift {
-
+        display: none;
     }
     .formRate {
         display: none;
