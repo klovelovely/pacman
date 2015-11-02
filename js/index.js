@@ -19,7 +19,7 @@
      * 页面加载时, 根据url param指定的step, 移动到目标位置
      */
     if (originStep != -1 && targetStep != -1) {
-        //gotoStep(originStep, targetStep);
+        gotoStep(originStep, targetStep);
     }
 
     // test
