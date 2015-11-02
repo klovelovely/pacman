@@ -19,7 +19,7 @@
      * 页面加载时, 根据url param指定的step, 移动到目标位置
      */
     if (originStep != -1 && targetStep != -1) {
-        gotoStep(originStep, targetStep);
+        //gotoStep(originStep, targetStep);
     }
 
     // test
@@ -51,23 +51,31 @@
                 gameContainer.removeClass(stepStart)
                     .addClass(stepEnd);
             })();
-        }, 1500);
+        }, 1000);
         setTimeout(function () {
             (function () {
                 if (!!gift.length) {
                     pacman.hide();
                     pacman_frontface.fadeIn();
                 }
-                gift.addClass('active');
+                //gift.addClass('active');
             })();
-        }, 3000);
+        }, 2000);
         setTimeout(function () {
             $('.formContainer').addClass('animated fadeInUp');
             $('.giftContainer').addClass('animated fadeInDown');
-            $('.J_GetGift').on('click', function () {
 
-            })
-        }, 4000);
+        }, 3000);
+        $('.J_GetGift').on('click', function () {
+            $('.redeemCode .noCode').hide();
+            $('.redeemCode .codeGet').fadeIn();
+            $('.formGetGift').hide();
+            $('.formRate').fadeIn();
+        });
+        $('.formRate .J_RateDown, .formRate .J_RateUp').on('click', function () {
+            $(this).siblings('.button').hide();
+            $(this).text('感谢您的反馈!')
+        });
     }
 
     /**

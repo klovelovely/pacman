@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:http="http://www.w3.org/1999/xhtml">
 <head>
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -120,27 +120,59 @@
 </section>
 
 <section class="giftContainer J_giftContainer">
-    <div class="wrapper">
-        <div class="giftBox">
-            <h5>您已获得礼品</h5>
-            <div class="giftPhoto">
-                <img src="http://p0.55tuanimg.com/static/goods/ckeditor/2013/02/04/17/ckeditor_1359971186_8668_wm.jpg" />
+
+    <div class="giftBox">
+        <div class="wrapper">
+            <h4 class="giftTitle">您已获得礼品</h4>
+
+            <div class="giftPhoto" style="background-image: url(http://p0.55tuanimg.com/static/goods/ckeditor/2013/02/04/17/ckeditor_1359971186_8668_wm.jpg)">
             </div>
-            <div class="giftName">抹茶慕斯</div>
+            <div class="giftName">橙子</div>
             <div class="giftDesc">采用抹茶与慕斯混合制作的一种甜点。慕斯英文mousse，是一种奶冻式的甜点，可以直接吃或做蛋糕夹层。通常是加入cream与凝固剂来造成浓稠冻状的效果。</div>
         </div>
     </div>
+
+    <div class="split">
+        <div class="bg">
+            <div class="dash"></div>
+        </div>
+    </div>
+
+    <div class="redeemCode">
+        <div class="wrapper">
+            <div class="noCode">
+                输入信息 当场领取礼品
+            </div>
+            <div class="codeGet">
+                <span class="name">兑换码:</span>
+                <span class="code">382950</span>
+            </div>
+        </div>
+    </div>
+
 </section>
 
 <section class="formContainer J_formContainer">
     <div class="wrapper">
-        <p>不止领取, 还可以记录游戏进度哦!</p>
 
-        <div class="userInput">
-            <input type="text" name="userName" placeholder="姓名">
-            <input type="number" name="userMobile" placeholder="手机号">
+        <div class="formGetGift">
+            <p>不止领取, 还可以记录游戏进度哦!</p>
+
+            <div class="userInput">
+                <input type="text" name="userName" class="userName" placeholder="姓名">
+                <input type="number" name="userMobile" class="userMobile" placeholder="手机号">
+            </div>
+            <button href="javascript:" class="button button-3d button-primary button-rounded button-block J_GetGift">领取礼品</button>
         </div>
-        <button href="javascript:" class="button button-3d button-primary button-rounded button-block J_GetGift">领取礼品</button>
+
+        <div class="formRate">
+            <p>你对今日服务是否满意</p>
+            <div class="userInput">
+                <a href="javascript:" class="button button-3d button-danger button-rounded J_RateDown">不满意</a>
+                <a href="javascript:" class="button button-3d button-primary button-rounded J_RateUp">满意</a>
+            </div>
+        </div>
+
     </div>
 </section>
 

@@ -23,6 +23,11 @@ body {
     user-select: none;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* 通用类 */
 .anim {
     -webkit-transition: 1s all ease-out;
@@ -32,17 +37,20 @@ body {
 @import "button.scss";
 
 /* pacman game 部分 */
-body{
+body {
 
 }
+
 .gameContainer {
-    padding: 6.6667% 6.6667% 2.1rem;
+    height: 60%;
+    padding: 3.5% 6.6667% 0;
+    overflow: auto;
 }
 
 .map {
     position: relative;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: .4rem;
     .gift {
         position: absolute;
         top: 0;
@@ -54,18 +62,18 @@ body{
         background-color: rgba(255, 255, 255, 1);
         background-size: cover;
         box-shadow: /*inset 0 0 .1rem rgba(255, 255, 255, .8),*/ 0 0 .2rem rgba(0, 0, 0, .6);
-        -webkit-transform: scale(.85);
+        -webkit-transform: scale(.8);
         transform: scale(.85);
-        opacity: .4;
+        opacity: 1;
         &:before {
             content: '';
             position: absolute;
-            bottom: -.15rem;
+            bottom: -.08rem;
             left: 50%;
             width: 0;
             height: 0;
-            margin-left: -.08rem;
-            border: .08rem solid transparent;
+            margin-left: -.04rem;
+            border: .04rem solid transparent;
             border-top-color: rgba(255, 255, 255, .9);
         }
         &:after {
@@ -87,17 +95,21 @@ body{
             opacity: 0;
         }
     }
-    @for $i from 0 to 30 {
+    @for $i from 0 to 31 {
         .gift#{$i+1} {
             left: 20% * ($i%5);
         }
     }
     .pathContainer {
-        padding-top: 20%;
+        padding-top: 14.5%;
+        .path,
+        .node {
+            opacity: .4;
+        }
         .path {
             width: 100%;
-            height: 2px;
-            margin: .3rem auto;
+            height: 1px;
+            margin: .3rem auto .15rem;
 
             /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#202532+0,40d4cd+10,40d4cd+50,40d4cd+90,202532+100&amp;0+0,1+10,1+50,1+90,0+100 */
 
@@ -118,10 +130,10 @@ body{
         }
         .node {
             position: absolute;
-            bottom: -.03rem;
-            width: .08rem;
-            height: .08rem;
-            margin-left: -.04rem;
+            bottom: -.02rem;
+            width: .05rem;
+            height: .05rem;
+            margin-left: -.02rem;
             border-radius: 50%;
             background: #40d4cd;
         }
@@ -148,6 +160,11 @@ body{
         bottom: 0;
         margin-left: -.15rem;
         margin-bottom: -0.15rem;
+        -webkit-transform: scale(.5);
+        -moz-transform: scale(.5);
+        -ms-transform: scale(.5);
+        -o-transform: scale(.5);
+        transform: scale(.5);
         .pacman {
             position: relative;
             width: 30px;
@@ -336,24 +353,10 @@ body{
     left: -20%;
 }
 
-.step1 .character {
-    left: 10%;
-}
-
-.step2 .character {
-    left: 30%;
-}
-
-.step3 .character {
-    left: 50%;
-}
-
-.step4 .character {
-    left: 70%;
-}
-
-.step5 .character {
-    left: 90%;
+@for $i from 1 to 31 {
+    .step#{$i} .character {
+        left: 20% * ($i % 5 - 1) + 10%;
+    }
 }
 
 /* 其他 */
@@ -369,17 +372,17 @@ button {
     width: 100%;
     .num {
         position: absolute;
-        top: 0;
+        top: -.05rem;
         width: 20%;
         text-align: center;
-        color: #fff;
-        font-size: .2rem;
+        color: rgba(255, 255, 255, 1);
+        font-size: .14rem;
         &:after {
             content: '';
             padding-top: 100%;
         }
     }
-    @for $i from 0 to 30 {
+    @for $i from 0 to 31 {
         .num#{$i+1} {
             left: 20% * ($i%5);
         }
@@ -388,27 +391,126 @@ button {
 
 /* 礼物盒弹窗 */
 .giftContainer {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 2%;
     z-index: 100;
     min-height: 2.1rem;
-    margin: .1rem;
-    padding: .1rem;
+    margin: 0 3%;
     text-align: center;
     color: #555;
-    background-color: rgba(255, 255, 255, .9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-    -webkit-border-radius: .1rem;
-    -moz-border-radius: .1rem;
-    border-radius: .04rem;
-
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
     .giftBox {
-        .giftPhoto {
-            img {
-                width: 1rem;
+        background-color: rgba(255, 255, 255, 1);
+        -webkit-border-radius: .04rem .04rem 0 0;
+        -moz-border-radius: .04rem .04rem 0 0;
+        border-radius: .04rem .04rem 0 0;
+        box-shadow: 0 -.2rem .1rem rgba(0, 0, 0, .5);
+        .wrapper {
+            overflow: hidden;
+            .giftTitle {
+                margin: 0;
+                padding: .15rem 0;
+                font-size: .17rem;
+                line-height: 1;
+                font-weight: normal;
+                color: #3c3242;
+            }
+            .giftPhoto {
+                margin: 0 auto;
+                width: 1.23rem;
+                height: 1.23rem;
+                background: no-repeat center;
+                background-size: cover;
+            }
+            .giftName {
+                padding: .15rem 0;
+                font-size: .17rem;
+                line-height: 1;
+                color: #3c3242;
+            }
+            .giftDesc {
+                max-height: 4.5em;
+                overflow: hidden;
+                font-size: .16rem;
+                padding: 0 .1rem 0;
+                margin-bottom: .05rem;
+                text-indent: 2em;
+                text-align: left;
+                line-height: 1.5;
+                color: #484848;
+                word-break: break-all;
+            }
+        }
+    }
+
+    .split {
+        position: relative;
+        overflow: hidden;
+        opacity: 1;
+        .bg {
+            overflow: hidden;
+            height: .095rem;
+            margin: 0 .045rem;
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .dash {
+            margin: .044rem 0;
+            border: 0 none;
+            border-top: 1px dashed rgba(0, 0, 0, .62);
+        }
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .045rem;
+            height: .095rem;
+            background: url('../images/semi-circle.png') no-repeat center;
+            background-size: 100%;
+        }
+        &:after {
+            left: auto;
+            right: 0;
+            -webkit-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    }
+
+    .redeemCode {
+        position: relative;
+        padding: .12rem 0;
+        min-height: .2rem;
+        font-size: .19rem;
+        line-height: .2rem;
+        background-color: rgba(255, 255, 255, 1);
+        color: #2c3242;
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            width: 100%;
+            height: 12px;
+            background: url("../images/jag.png") repeat-x left top;
+            background-size: 2%;
+            opacity: 1;
+        }
+        .noCode {
+
+        }
+        .codeGet {
+            display: none;
+            .name {
+                margin-right: .2em;
+            }
+            .code {
+                letter-spacing: .2em;
             }
         }
     }
@@ -417,27 +519,33 @@ button {
 /* 领取礼物表单 */
 .formContainer {
     position: fixed;
-    bottom: .1rem;
+    bottom: 0;
     z-index: 100;
     width: 100%;
     height: 2.1rem;
-    padding: .1rem;
+    padding: 0 4%;
     text-align: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, .9);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    /*background-color: rgba(0, 0, 0, .9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);*/
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
+    z-index: 200;
+    p {
+        font-size: .18rem;
+        font-weight: bold;
+    }
     .userInput {
-        padding: .2rem 0;
+        padding: .15rem 0 .25rem;
         & input {
-            width: 49%;
+            width: 47%;
             border: 0 none;
             background: #fff;
             color: #555;
             padding: .1rem;
-            font-size: .2rem;
+            font-size: .16rem;
+            text-align: center;
             font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
             -webkit-border-radius: .04rem;
             -moz-border-radius: .04rem;
@@ -449,17 +557,24 @@ button {
             -webkit-appearance: none;
         }
         & input::-webkit-input-placeholder {
-            color: #cccccc;
+            text-align: center;
+            color: #6e6e6e;
         }
         .userName {
-
+            margin-right: 2%;
         }
         .userMobile {
-
+            margin-left: 2%;
         }
 
     }
-    .button {
+    .formGetGift {
 
+    }
+    .formRate {
+        display: none;
+        .button {
+            margin: .2rem .1rem 0;
+        }
     }
 }

@@ -43,8 +43,8 @@
     box-sizing: border-box;
     -webkit-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: .3s;
-    transition-duration: .3s;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
     /*
     * Disabled State
     *
@@ -397,10 +397,11 @@
 
 .button-3d:active, .button-3d.active, .button-3d.is-active {
     top: 5px;
+    color:#fff;
     -webkit-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: .15s;
-    transition-duration: .15s;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
     -webkit-box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 0 #bbbbbb, 0 3px 3px rgba(0, 0, 0, 0.2);
 }
