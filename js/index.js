@@ -47,18 +47,18 @@
                 gameContainer.removeClass(stepStart)
                     .addClass(stepEnd);
             })();
-        }, 800);
+        }, 1000);
 
         // 如果当前位置有礼物, 则pacman切换到笑脸
         setTimeout(function () {
             (function () {
                 if (hasGift) {
                     pacman.hide();
-                    pacman_frontface.fadeIn();
+                    pacman_frontface.show();
                 }
                 //gift.addClass('active');
             })();
-        }, 1500);
+        }, 2500);
 
         // 显示礼物弹窗 & 表单弹窗
         setTimeout(function () {
@@ -75,7 +75,7 @@
                     $('.formGetGift').show();
                 }
             })();
-        }, 2000);
+        }, 3600);
 
         // 点击领取礼物时获得兑换码, 同时切换到用户反馈界面
         $('.J_GetGift').on('click', function () {
